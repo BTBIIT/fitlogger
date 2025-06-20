@@ -1,0 +1,187 @@
+/* 기본 전체 컨테이너 */
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #1e293b; /* 진한 네이비 배경 */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 10px 10px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+header img {
+  height: 28px;
+  width: 28px;
+  margin-right: 0.75rem;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  header img {
+    margin: 0;
+  }
+}
+
+/* 입력 폼 스타일 */
+input.inputField {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button.button {
+  padding: 0.6rem 1.2rem;
+  background-color: #1e293b; /* 진한 네이비 */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button.button:hover {
+  background-color: #1d4ed8;
+}
+
+/* 운동 기록 리스트 */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* 삭제 버튼 */
+button.deleteBtn {
+  background-color: #ef4444;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+button.deleteBtn:hover {
+  background-color: #b91c1c;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (min-width: 640px) {
+  input.inputField {
+    width: auto;
+    max-width: 200px;
+    margin-right: 1rem;
+  }
+
+  button.button {
+    width: auto;
+  }
+
+  form.container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 입력 폼 행 스타일 */
+  form.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* input 크기 반응형 조절 */
+  form.form-row .inputField {
+    flex: 1 1 100px;
+    min-width: 100px;
+  }
+
+  /* 버튼도 크기 맞춤 */
+  form.form-row .button {
+    flex: 1 1 80px;
+    min-width: 80px;
+  }
+
+  /* 날짜별 섹션 */
+  .workout-date-section {
+    margin-top: 2rem;
+  }
+
+  /* 리스트 */
+  .workout-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* 카드 스타일 */
+  .workout-card {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 카드 안 정보 */
+  .workout-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details {
+    font-size: 0.95rem;
+    color: #374151; /* Tailwind gray-700 */
+  }
+}
+
+/* 1RM 강조 스타일 - 모든 화면 크기 공통 */
+.one-rm {
+  font-weight: bold;
+  color: #2563eb;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
