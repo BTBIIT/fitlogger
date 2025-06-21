@@ -2,7 +2,7 @@
   "name": "FitLogger",
   "short_name": "FitLogger",
   "description": "운동 기록과 1RM 추적을 위한 간단한 피트니스 앱",
-  "start_url": "/",
+  "start_url": "/fitlogger/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1e293b",
