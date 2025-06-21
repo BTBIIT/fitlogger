@@ -1,208 +1,147 @@
-# 🏋️ FitLogger 프로젝트 정리
-<<<<<<< f4619cb7f8bacaff9486bc54f7d3ede534b58ab1
-<hr/>
+# FitLogger
 
-### 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, <br>PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
-
-<hr/>
-
-## 📆 오늘 진행한 일정
-
-- React 기반 Vite 프로젝트 생성 및 설정
-- 기본 컴포넌트 (Header, WorkoutForm, WorkoutListByDate) 작성
-- CSS 반응형 스타일링 및 1RM 강조 효과 적용
-- 로고 교체 및 헤더 색상 조정
-- PWA 기능 연동 및 manifest 설정
-- Firebase 프로젝트 생성 및 SDK 연동 확인
-- `.env`를 통한 보안 키 분리
-- GitHub 저장소 연동 및 첫 커밋
-- SSH 키 등록 및 원격 저장소 push 설정 완료
-
-=======
-
-<hr/>
-
-### 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, <br>PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
-
-<hr/>
-
-## 📆 오늘 진행한 일정
-
-- React 기반 Vite 프로젝트 생성 및 설정
-- 기본 컴포넌트 (Header, WorkoutForm, WorkoutListByDate) 작성
-- CSS 반응형 스타일링 및 1RM 강조 효과 적용
-- 로고 교체 및 헤더 색상 조정
-- PWA 기능 연동 및 manifest 설정
-- Firebase 프로젝트 생성 및 SDK 연동 확인
-- `.env`를 통한 보안 키 분리
-- GitHub 저장소 연동 및 첫 커밋
-- SSH 키 등록 및 원격 저장소 push 설정 완료
-
->>>>>>> PWA 준비 및 배포 전 코드 정리
-## 🔜 앞으로 진행할 일정
-
-- Firebase Realtime Database 연동
-- 사용자 인증 (Google 또는 이메일 기반)
-- Firebase에 운동 기록 저장 및 불러오기
-- 기록 통계 시각화 (그래프 등)
-- 최종 배포: Netlify 또는 Firebase Hosting
-
-## 🔄 현재 진행 중인 작업
-
-- Firebase 연동 구조 준비
-- 운동 기록 저장 구조 설계
+**FitLogger**는 사용자가 날짜별로 운동 기록을 추가하고, 1RM(1회 최대 중량)을 자동 계산해주는 간단한 웹 기반 피트니스 로그 앱입니다. <br> 반응형 웹으로 제작되어 모바일과 데스크탑 모두에서 사용할 수 있으며, PWA 기능을 통해 앱 설치도 가능.
 
 ---
 
-## 📦 기술 스택
+## 📌 프로젝트 개요
 
-- React (Vite 기반)
-- Firebase
-- PWA (Progressive Web App)
-- GitHub
+- **프로젝트명:** FitLogger
+- **개발 기간:** 2025-06-20 ~ 2025-06-21
+- **기술 스택:**
+  - React (Vite 기반)
+  - HTML/CSS (반응형)
+  - LocalStorage 저장 방식
+  - Progressive Web App (PWA)
 
-## 🛠️ 프로젝트 초기화 및 설치
+---
+
+## 🛠 주요 기능
+
+- 날짜별 운동 기록 추가 및 삭제
+- Epley 공식을 사용한 자동 1RM 계산
+- 운동 기록별 카드 UI
+- 반응형 디자인 (모바일 최적화)
+- PWA 설치 및 오프라인 사용 지원
+
+---
+
+## 📁 디렉터리 구조
+
+```
+fitlogger/
+├── public/
+│   ├── icons/                  # PWA 아이콘 이미지
+│   ├── screenshots/            # PWA 스크린샷
+│   └── manifest.json           # PWA 메타 정보
+├── src/
+│   ├── components/             # Header, WorkoutForm, WorkoutListByDate 컴포넌트
+│   ├── pages/                  # Home.jsx (메인 페이지)
+│   ├── App.jsx                 # App 루트 컴포넌트
+│   ├── main.jsx                # ReactDOM 진입점
+│   └── App.css                 # 전체 스타일
+├── index.html                  # HTML 템플릿
+├── vite.config.js              # Vite 설정
+├── package.json                # 프로젝트 의존성
+├── .gitignore                  # Git 추적 제외 파일 목록
+└── README.md                   # 프로젝트 소개 문서
+```
+
+---
+
+## ⚙️ 로컬 개발 실행
 
 ```bash
-# Vite 기반 React 프로젝트 생성
-npm create vite@latest fitlogger -- --template react
-
-cd fitlogger
+# 1. 의존성 설치
 npm install
 
-# Firebase SDK 설치
-npm install firebase
-
-# 개발 서버 실행
+# 2. 개발 서버 실행
 npm run dev
 ```
 
-## 🗂 디렉터리 구조 요약
+---
 
-```
-FITLOGGER/
-├── node_modules/ # npm 패키지 설치 디렉터리
-├── public/ # 정적 파일 경로 (PWA 관련 포함)
-│ ├── icons/
-│ │ ├── icon-192x192.png # PWA 아이콘 (192x192)
-│ │ ├── icon-512x512.png # PWA 아이콘 (512x512)
-│ ├── manifest.json # PWA 매니페스트 파일
-│ └── vite.svg # 기본 Vite 아이콘 (사용 X 가능성)
-├── src/ # 메인 소스 코드 디렉터리
-│ ├── assets/
-│ │ └── logo.svg # 앱 로고 SVG
-│ ├── components/ # 재사용 가능한 컴포넌트 모음
-│ │ ├── Header.jsx # 상단 헤더 (로고 + 제목)
-│ │ ├── WorkoutForm.jsx # 운동 입력 폼 컴포넌트
-│ │ └── WorkoutListByDate.jsx # 날짜별 운동 리스트 카드 UI
-│ ├── firebase/
-│ │ └── firebaseConfig.js # Firebase 설정 및 초기화
-│ ├── pages/
-│ │ └── Home.jsx # 홈 화면 페이지 컴포넌트
-│ ├── utils/
-│ │ └── calculate1RM.js # 1RM 계산 함수 (Epley 공식)
-│ ├── App.css # 전체 앱 스타일 (레이아웃, 반응형 등)
-│ ├── App.jsx # 전체 앱 레이아웃 (Header + Home)
-│ ├── index.css # 기본 글로벌 스타일
-│ └── main.jsx # React 앱 진입점 (root 렌더링)
-├── .env # 환경변수 파일 (API 키 등 보관)
-├── .gitignore # Git에서 제외할 파일 정의
-├── eslint.config.js # ESLint 설정
-├── index.html # 앱의 HTML 템플릿 (Vite 전용)
-├── package.json # 프로젝트 메타 정보 및 의존성
-├── package-lock.json # 의존성 잠금 파일
-├── README.md # 프로젝트 설명 문서
-└── vite.config.js # Vite 설정 파일
-```
-
-## 🌐 PWA 설정
-
-`public/manifest.json` 예시:
-
-```json
-{
-  "name": "FitLogger",
-  "short_name": "FitLogger",
-  "description": "운동 기록과 1RM 추적을 위한 피트니스 앱",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e293b",
-  "icons": [
-    {
-      "src": "/icons/192icons.svg",
-      "sizes": "192x192",
-      "type": "image/svg"
-    },
-    {
-      "src": "/icons/512icons.svg",
-      "sizes": "512x512",
-      "type": "image/svg"
-    }
-  ]
-}
-```
-
-`index.html` 추가 사항:
-
-```html
-<link rel="manifest" href="/manifest.json" />
-<meta name="theme-color" content="#1e293b" />
-```
-
-## 🔐 Firebase 연동
-
-```js
-// Firebase SDK import
-import { initializeApp } from "firebase/app";
-
-// .env 파일에 저장된 환경변수로 구성
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-};
-
-// Firebase 앱 초기화
-const app = initializeApp(firebaseConfig);
-export default app;
-```
-
-> 보안을 위해 이 파일은 `.env`로 분리하고 `.gitignore`에 추가함.
-
-## 🔧 Git 연동 및 커밋 명령어
+## 🧱 빌드 및 PWA 준비
 
 ```bash
-# Git 초기화
-git init
+# 1. 빌드
+npm run build
 
-# 원격 저장소 연결
-git remote add origin git@github.com:BTBIIT/fitlogger.git
-
-# 변경 파일 스테이징
-git add .
-
-# 커밋 메시지 작성
-git commit -m "PWA, Firebase 연동 완료 및 UI 정리"
-
-# 원격 저장소로 푸시
-git push -u origin master
-```
-
-`.gitignore` 예시:
-
-```
-node_modules
-dist
-.env
-firebaseConfig.js
+# 2. 빌드된 파일은 /dist 경로에 생성됨
 ```
 
 ---
 
-## 📎 GitHub 저장소
+## 🌍 GitHub Pages 배포
 
-👉 [https://github.com/BTBIIT/fitlogger](https://github.com/BTBIIT/fitlogger)
+### 1. GitHub Pages 설정
+
+`vite.config.js` 내 `base` 경로를 다음과 같이 설정:
+
+```js
+export default defineConfig({
+  base: '/fitlogger/',
+  ...
+});
+```
+
+### 2. gh-pages 설치 및 배포
+
+```bash
+npm install -D gh-pages
+
+# 배포 명령어
+npx gh-pages -d dist
+```
+
+### 3. 커밋 및 푸시 예시
+
+```bash
+git add .
+git commit -m "🚀 build: 앱 배포용 빌드 완료"
+git push origin master
+```
+
+---
+
+## 📱 PWA 설치 가이드
+
+- `manifest.json`에 다음과 같은 항목 포함:
+  - `start_url`: `/fitlogger/`
+  - `icons`: 192x192, 512x512
+  - `screenshots`: 모바일/데스크탑용 1장씩
+- HTTPS에서만 설치 가능 (GitHub Pages는 자동 적용)
+- 앱 아이콘이 홈 화면에 생성되며 오프라인에서도 작동 가능
+
+---
+
+## 🧹 Firebase 제거 내용
+
+- Firebase 연동 파일 (`firebaseConfig.js`, `firestore.js`) 삭제
+- 모든 기능은 LocalStorage 기반으로 재구성
+- Firebase 관련 의존성 및 설정은 `package.json`과 `.gitignore` 등에서 제거
+
+---
+
+## 🔗 배포 주소
+
+👉 **[https://btbiit.github.io/fitlogger/](https://btbiit.github.io/fitlogger/)**
+
+---
+
+## 👀 미리보기
+
+> 모바일
+
+`/public/screenshots/screenshot-mobile.png`
+
+> 데스크탑
+
+`/public/screenshots/screenshot-desktop.png`
+
+---
+
+## 📝 작성자
+
+- GitHub: [@BTBIIT](https://github.com/BTBIIT)
+- 프로젝트 기획, 개발, 배포 전 과정 직접 수행
