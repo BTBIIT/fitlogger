@@ -1,4 +1,5 @@
 # 🏋️ FitLogger 프로젝트 정리
+<<<<<<< f4619cb7f8bacaff9486bc54f7d3ede534b58ab1
 <hr/>
 
 ### 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, <br>PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
@@ -17,6 +18,27 @@
 - GitHub 저장소 연동 및 첫 커밋
 - SSH 키 등록 및 원격 저장소 push 설정 완료
 
+=======
+
+<hr/>
+
+### 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, <br>PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
+
+<hr/>
+
+## 📆 오늘 진행한 일정
+
+- React 기반 Vite 프로젝트 생성 및 설정
+- 기본 컴포넌트 (Header, WorkoutForm, WorkoutListByDate) 작성
+- CSS 반응형 스타일링 및 1RM 강조 효과 적용
+- 로고 교체 및 헤더 색상 조정
+- PWA 기능 연동 및 manifest 설정
+- Firebase 프로젝트 생성 및 SDK 연동 확인
+- `.env`를 통한 보안 키 분리
+- GitHub 저장소 연동 및 첫 커밋
+- SSH 키 등록 및 원격 저장소 push 설정 완료
+
+>>>>>>> PWA 준비 및 배포 전 코드 정리
 ## 🔜 앞으로 진행할 일정
 
 - Firebase Realtime Database 연동

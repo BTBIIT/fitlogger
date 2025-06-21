@@ -17,5 +17,21 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-mobile.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "모바일에서 운동 기록 화면"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop.png",
+      "sizes": "1440x1024",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "데스크탑에서 운동 기록 화면"
+    }
   ]
 }
