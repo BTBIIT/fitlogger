@@ -1,9 +1,9 @@
 # 🏋️ FitLogger 프로젝트 정리
 <hr/>
 
-## 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
+### 운동 기록과 1RM 계산을 위한 React 기반 웹앱으로, PWA 및 Firebase를 연동하여 점차 확장해나가는 사이드 프로젝트
 
-<hr>
+<hr/>
 ## 📆 오늘 진행한 일정
 
 - React 기반 Vite 프로젝트 생성 및 설정
